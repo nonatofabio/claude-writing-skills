@@ -4,20 +4,21 @@ Instructions for a coding agent (Claude Code, or any agent that can run a shell 
 
 ## Job 1: install the skills
 
-Copy both skill folders into the user's skills directory. For Claude Code that is `~/.claude/skills/`.
+Copy the skill folders into the user's skills directory. For Claude Code that is `~/.claude/skills/`.
 
 ```bash
 cp -r plainspoken ~/.claude/skills/
 cp -r humanize   ~/.claude/skills/
+cp -r ste        ~/.claude/skills/
 ```
 
 Then confirm they registered:
 
 ```bash
-ls ~/.claude/skills/plainspoken/SKILL.md ~/.claude/skills/humanize/SKILL.md
+ls ~/.claude/skills/plainspoken/SKILL.md ~/.claude/skills/humanize/SKILL.md ~/.claude/skills/ste/SKILL.md
 ```
 
-Skills load from frontmatter, so a new session (or a skill reload) picks them up. Tell the user to restart their session, then invoke with `/plainspoken` or `/humanize`.
+Skills load from frontmatter, so a new session (or a skill reload) picks them up. Tell the user to restart their session, then invoke with `/plainspoken`, `/humanize`, or `/ste`.
 
 If the user runs a different harness, the unit that matters is the folder plus its `SKILL.md`. Drop the folder wherever that harness discovers skills.
 
